@@ -1,14 +1,14 @@
 import React from "react";
 import logo from "../../../assets/images/svg/bootstrap-solid.svg";
-// import "./Login.css";
+import "./Login.css";
 
 const Login = () => {
   return (
-    <div className="text-center">
+    <div className="text-center login-body">
       <form className="form-signin">
         <img className="mb-4" src={logo} alt="" width="72" height="72" />
         <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" className="sr-only">
+        <label htmlFor="inputEmail" className="sr-only">
           Email address
         </label>
         <input
@@ -17,9 +17,9 @@ const Login = () => {
           className="form-control"
           placeholder="Email address"
           required=""
-          autofocus=""
+          autoFocus=""
         />
-        <label for="inputPassword" className="sr-only">
+        <label htmlFor="inputPassword" className="sr-only">
           Password
         </label>
         <input

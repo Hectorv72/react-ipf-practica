@@ -4,20 +4,22 @@ import Navbar from "./components/layouts/Navbar/Navbar";
 import Login from "./components/pages/Login/Login";
 import Home from "./components/pages/Home/Home";
 import Numdoble from "./components/pages/Numdoble/Numdoble";
-import ColorText from "./components/layouts/Navbar/ColorText/ColorText";
+import ColorText from "./components/layouts/ColorText/ColorText";
+import TextAnimation from "./components/pages/TextAnimation/TextAnimation";
 
 const items = [
   { link: "/home", name: "Home", component: Home },
   { link: "/login", name: "Login", component: Login },
   { link: "/dobles", name: "Dobles", component: Numdoble },
   { link: "/colortext", name: "ColorText", component: ColorText },
+  { link: "/textanimation", name: "TextAnimation", component: TextAnimation },
 ];
 
 const Routing = () => {
   return (
     <Switch>
       {items.map((item, key) => (
-        <Route key={key} exatc path={item.link} component={item.component} />
+        <Route key={key} exact path={item.link} component={item.component} />
       ))}
     </Switch>
   );

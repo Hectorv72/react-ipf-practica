@@ -6,6 +6,7 @@ import Home from "./components/pages/Home/Home";
 import Numdoble from "./components/pages/Numdoble/Numdoble";
 import ColorText from "./components/layouts/ColorText/ColorText";
 import TextAnimation from "./components/pages/TextAnimation/TextAnimation";
+import JsonDatos from "./components/pages/JsonDatos/JsonDatos";
 
 const items = [
   { link: "/home", name: "Home", component: Home },
@@ -13,6 +14,7 @@ const items = [
   { link: "/dobles", name: "Dobles", component: Numdoble },
   { link: "/colortext", name: "ColorText", component: ColorText },
   { link: "/textanimation", name: "TextAnimation", component: TextAnimation },
+  { link: "/jsondatos", name: "JsonDatos", component: JsonDatos },
 ];
 
 const Routing = () => {

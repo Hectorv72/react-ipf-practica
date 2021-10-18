@@ -23,7 +23,9 @@ const ColorText = () => {
 
   return (
     <div>
-      <h1 className={"text-" + h1color}>Texto que cambia de color</h1>
+      <h1 style={{ fontSize: 500 }} className={"text-" + h1color}>
+        Texto que cambia de color
+      </h1>
       <button onClick={handleH1ChangeColor} className="btn btn-success">
         Cambiar Color
       </button>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./style.css";
 
 const TextRgb = ({ texto }) => {
   useEffect(() => {
@@ -6,23 +7,24 @@ const TextRgb = ({ texto }) => {
   }, []);
 
   const listColors = ["primary", "success", "danger", "warning", "info"];
+  const arraystring = texto.split("");
   let position = 0;
 
-  const getPosition = (ind, colors) => {
-    const a = (ind + position) % colors.length;
+  const getPosition = (ind, listlen) => {
+    const a = Math.abs((ind - position) % listlen);
+    console.log(a);
     return a;
   };
 
   const getElement = (string, colors) => {
-    const arraystring = string.split("");
-    const newlist = arraystring.map((char, index) => (
-      <h1
+    const newlist = string.map((char, index) => (
+      <span
         className={
-          "w-25 d-inline text-" + colors[getPosition(index, listColors)]
+          "w-25 d-inline text-" + colors[getPosition(index, listColors.length)]
         }
       >
         {char}
-      </h1>
+      </span>
     ));
     position++;
     return newlist;
@@ -31,13 +33,17 @@ const TextRgb = ({ texto }) => {
   const [newtext, setNewtext] = useState();
 
   const handleChangeColorText = () => {
-    const valores = getElement(texto, listColors);
+    const valores = getElement(arraystring, listColors);
     setNewtext(valores);
   };
 
   // setInterval(handleChangeColorText, 1000);
 
-  return <div>{newtext}</div>;
+  return (
+    <div>
+      <h1>{newtext}</h1>
+    </div>
+  );
 };
 
 export default TextRgb;
